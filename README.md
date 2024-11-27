@@ -37,6 +37,12 @@ $ npm run dev
 
 ```
 
+## To run Section 3 of the assessment
+```bash
+$ cd Algorithm
+$ node algorithm.js
+```
+
 ## Write-up
 
 - The `npm run dev` is to only be executed within `Express` folder.
