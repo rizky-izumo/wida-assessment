@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "935df640-9044-47fc-9496-dd30c37cbfa4",
+		"name": "Wida Assessment Task",
+		"description": "APIs for Invoice and XLSX import for the assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9930893"
+	},
+	"item": [
+		{
+			"name": "Read Invoice",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/invoice/read/8",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"invoice",
+						"read",
+						"8"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Invoice",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/invoice/remove/8",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"invoice",
+						"remove",
+						"8"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Invoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"invoiceNo\": \"12\",\n    \"invoiceDate\": \"2024-12-01\",\n    \"customerName\": \"Rizky\",\n    \"salespersonName\": \"Mark\",\n    \"paymentType\": \"CASH\",\n    \"notes\": \"Sultan order\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/invoice/create",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"invoice",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Invoice",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"invoiceDate\": \"2024-11-27\",\n    \"customerName\": \"Mark Levin\",\n    \"salespersonName\": \"Clarkson\",\n    \"paymentType\": \"CASH\",\n    \"notes\": \"This is an Invoice\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/invoice/update/8",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"invoice",
+						"update",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Import Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/errystio/Downloads/InvoiceImport2.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:4000/product/import",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"product",
+						"import"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
