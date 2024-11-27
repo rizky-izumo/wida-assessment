@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:14
+    container_name: wida-db
+    environment:
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASS}
+      - POSTGRES_DB=${PG_DB}
+    volumes:
+      - ./docker/postgresql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  db-seed:
+    image: postgres:14
+    depends_on:
+      - db
+    environment:
+      PGPASSWORD: ${PG_PASS}
+    volumes:
+      - ./migrations/seed:/seed
+    command: psql -h db -U ${PG_USER} -d ${PG_DB} -f /seed/seed_data.sql -q -t
+    profiles:
+      - extra
