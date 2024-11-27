@@ -47,3 +47,4 @@ $ node algorithm.js
 
 - The `npm run dev` is to only be executed within `Express` folder.
 - Algorithm/algorithm.js is for Section 3 of Problem solving.
+- Postman collection `Wida-APIs.postman_collection.json` file can be imported in Postman to call the APIs in this repository.
