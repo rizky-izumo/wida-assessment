@@ -29,7 +29,7 @@ $ docker compose --env-file .env up -d
 # Setup PostgreSQL
 $ knex migrate:latest
 
-# Optional step to insert seed data
+# Optional (but recommend) step to insert seed data. Data can also be used for Postman collection APIs
 $ docker compose --env-file .env run --rm db-seed
 
 # Run server
